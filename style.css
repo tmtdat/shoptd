@@ -1,0 +1,157 @@
+/* Đặt lại các kiểu mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Kiểu dáng cho body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Kiểu dáng thanh điều hướng */
+nav {
+    background-color: #007BFF; /* Màu nền xanh */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Container chứa sản phẩm */
+.frame-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 20px;
+    flex-wrap: nowrap; /* Ngăn không cho các sản phẩm xuống dòng */
+    justify-content: flex-start; /* Đảm bảo các sản phẩm được căn lề trái */
+}
+
+/* Kiểu dáng cho từng khung sản phẩm */
+.frame-box {
+    position: relative;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    width: 200px; /* Đảm bảo chiều rộng cố định cho sản phẩm */
+    flex-shrink: 0; /* Ngăn sản phẩm thu nhỏ */
+    overflow: hidden; /* Ẩn phần bị tràn ngoài khung */
+}
+
+/* Kiểu dáng hình ảnh sản phẩm */
+.frame-box img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+    transition: opacity 0.3s ease; /* Hiệu ứng mờ khi hover */
+}
+
+/* Kiểu dáng cho thông tin sản phẩm */
+.product-info {
+    display: none; /* Ẩn mặc định */
+    position: absolute;
+    top: 10px; /* Khoảng cách từ trên */
+    left: 10px; /* Khoảng cách từ trái */
+    right: 10px; /* Khoảng cách từ phải */
+    bottom: 10px; /* Khoảng cách từ dưới */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    overflow-y: auto; /* Cho phép cuộn nếu cần */
+}
+
+/* Hiển thị thông tin sản phẩm khi hover */
+.frame-box:hover .product-info {
+    display: block; /* Hiển thị khi hover */
+}
+
+/* Mờ hình ảnh khi hover vào sản phẩm */
+.frame-box:hover img {
+    opacity: 0.3; /* Làm mờ hình ảnh khi hover */
+}
+
+/* Hiệu ứng hover cho frame-box */
+.frame-box:hover {
+    transform: scale(1.05);
+}
+
+/* Kiểu dáng cho các nút điều hướng */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.slider-btn.prev {
+    left: 10px;
+}
+
+.slider-btn.next {
+    right: 10px;
+}
+
+/* Kiểu dáng cho Modal */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed; /* Giữ cố định */
+    z-index: 1000; /* Đặt lên trên cùng */
+    left: 0;
+    top: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: 100%; /* Chiếm toàn bộ chiều cao */
+    overflow: auto; /* Cho phép cuộn nếu cần */
+    background-color: rgba(0, 0, 0, 0.4); /* Nền đen với độ mờ */
+    animation: modalFadeIn 0.5s ease-out;
+    display: flex;
+    justify-content: center; /* Căn giữa modal theo chiều ngang */
+    align-items: center; /* Căn giữa modal theo chiều dọc */
+}
+
+/* Nội dung Modal */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Có thể thay đổi tuỳ thuộc vào kích thước màn hình */
+    max-width: 400px; /* Giới hạn chiều rộng tối đa */
+    text-align: center;
+    transform: scale(0.8); /* Phóng to dần khi modal xuất hiện */
+    animation: modalScaleIn 0.5s ease-out forwards;
+}
+
+/* Hiệu ứng fade-in cho Modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hiệu ứng scale-in cho modal-content */
+@keyframes modalScaleIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
