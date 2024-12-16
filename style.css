@@ -31,6 +31,7 @@ nav {
     justify-content: flex-start; /* Đảm bảo các sản phẩm được căn lề trái */
 }
 
+
 /* Kiểu dáng cho từng khung sản phẩm */
 .frame-box {
     position: relative;
@@ -61,11 +62,12 @@ nav {
     left: 10px; /* Khoảng cách từ trái */
     right: 10px; /* Khoảng cách từ phải */
     bottom: 10px; /* Khoảng cách từ dưới */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(150, 146, 146, 0.7);
     color: white;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
     overflow-y: auto; /* Cho phép cuộn nếu cần */
 }
 
@@ -131,8 +133,11 @@ nav {
     width: 80%; /* Có thể thay đổi tuỳ thuộc vào kích thước màn hình */
     max-width: 400px; /* Giới hạn chiều rộng tối đa */
     text-align: center;
+    line-height: 150%;;
     transform: scale(0.8); /* Phóng to dần khi modal xuất hiện */
-    animation: modalScaleIn 0.5s ease-out forwards;
+    animation: modalScaleIn 0.3s ease-out forwards;
+    border-radius: 10px; /*bo góc*/
+    
 }
 
 /* Hiệu ứng fade-in cho Modal */
